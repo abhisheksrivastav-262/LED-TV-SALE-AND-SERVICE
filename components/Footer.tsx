@@ -1,6 +1,16 @@
 import Link from "next/link";
-import { Phone, MapPin, Clock, Star, Globe, Share2, AtSign } from "lucide-react";
+import { Phone, MapPin, Clock, Star, MessageCircle } from "lucide-react";
 import { BUSINESS, NAV, SERVICES } from "@/lib/constants";
+
+export function InstagramIcon({ className = "h-5 w-5" }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
+      <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+      <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+      <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+    </svg>
+  );
+}
 
 export default function Footer() {
   return (
@@ -16,11 +26,15 @@ export default function Footer() {
             <Star className="h-4 w-4 fill-amber-300" /> {BUSINESS.rating} Google Rating ({BUSINESS.reviews})
           </p>
           <div className="mt-4 flex gap-2">
-            {[Globe, Share2, AtSign].map((Icon, i) => (
-              <a key={i} href="#" aria-label="social" className="btn-ghost grid h-10 w-10 place-items-center rounded-full">
-                <Icon className="h-5 w-5" />
-              </a>
-            ))}
+            <a href={BUSINESS.instagram} target="_blank" aria-label="Follow us on Instagram" className="btn-ghost grid h-10 w-10 place-items-center rounded-full">
+              <InstagramIcon />
+            </a>
+            <a href={BUSINESS.whatsapp} target="_blank" aria-label="Chat on WhatsApp" className="btn-ghost grid h-10 w-10 place-items-center rounded-full">
+              <MessageCircle className="h-5 w-5" />
+            </a>
+            <a href={BUSINESS.phoneHref} aria-label="Call us" className="btn-ghost grid h-10 w-10 place-items-center rounded-full">
+              <Phone className="h-5 w-5" />
+            </a>
           </div>
         </div>
         <div>

@@ -3,6 +3,7 @@ import { Phone, MessageCircle, MapPin, Clock, Mail } from "lucide-react";
 import SectionHeading, { Reveal } from "@/components/SectionHeading";
 import BookingForm from "@/components/BookingForm";
 import MapEmbed from "@/components/MapEmbed";
+import { InstagramIcon } from "@/components/Footer";
 import { BUSINESS } from "@/lib/constants";
 
 export const metadata: Metadata = {
@@ -29,6 +30,10 @@ export default function ContactPage() {
               <a href={BUSINESS.whatsapp} target="_blank" className="flex items-center gap-3 rounded-3xl bg-[#25D366] p-6 font-bold text-white shadow-[0_0_30px_rgba(37,211,102,0.4)] hover:scale-[1.01] transition">
                 <MessageCircle className="h-8 w-8" />
                 <span><span className="block text-xs font-medium opacity-80">WHATSAPP US</span><span className="font-display text-2xl">Chat Instantly</span></span>
+              </a>
+              <a href={BUSINESS.instagram} target="_blank" className="glass flex items-center gap-3 rounded-3xl p-5 font-bold text-white transition hover:shadow-[0_0_30px_rgba(0,194,255,0.35)]">
+                <span className="grid h-11 w-11 place-items-center rounded-2xl bg-gradient-to-br from-[#F58529] via-[#DD2A7B] to-[#8134AF]"><InstagramIcon className="h-6 w-6 text-white" /></span>
+                <span><span className="block text-xs font-medium text-slate-400">FOLLOW US</span><span className="font-display text-lg">Instagram @attrikumar2</span></span>
               </a>
               <div className="glass rounded-3xl p-6 text-sm">
                 <p className="flex gap-2"><MapPin className="h-5 w-5 shrink-0 text-cyan-300" /> {BUSINESS.address}</p>

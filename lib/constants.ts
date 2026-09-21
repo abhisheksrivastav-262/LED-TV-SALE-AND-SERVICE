@@ -8,6 +8,7 @@ export const BUSINESS = {
   altPhones: ["8800345308"],
   email: "shreesiddhielectronics@gmail.com",
   emailHref: "mailto:shreesiddhielectronics@gmail.com",
+  instagram: "https://www.instagram.com/attrikumar2?stkn=N2ozZnBrYXM0YzIz",
   address:
     "613G, Nyay Khand 2, Kala Pathar Road, Opp. Bharat Petrol Pump, Indirapuram, Ghaziabad",
   mapLat: "28.636911",
