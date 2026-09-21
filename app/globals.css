@@ -1,26 +1,173 @@
 @import "tailwindcss";
 
+@theme {
+  --color-void: #050816;
+  --color-panel: #0a1128;
+  --color-neon: #00c2ff;
+  --color-royal: #0066ff;
+  --color-ice: #7df9ff;
+  --font-display: "Space Grotesk", sans-serif;
+  --font-body: "Poppins", sans-serif;
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --neon: #00c2ff;
+  --royal: #0066ff;
+  --ice: #7df9ff;
+  --bg: #050816;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 96px;
+  overflow-x: clip;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--bg);
+  color: #e8f4ff;
+  font-family: "Poppins", system-ui, sans-serif;
+  overflow-x: clip;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+  text-rendering: optimizeLegibility;
+}
+
+.font-display {
+  font-family: "Space Grotesk", sans-serif;
+}
+
+.glass {
+  background: linear-gradient(135deg, rgba(255,255,255,0.09), rgba(255,255,255,0.02));
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid rgba(125, 249, 255, 0.14);
+}
+
+.glass-strong {
+  background: rgba(10, 17, 40, 0.72);
+  backdrop-filter: blur(22px);
+  -webkit-backdrop-filter: blur(22px);
+  border: 1px solid rgba(0, 194, 255, 0.18);
+}
+
+.text-gradient {
+  background: linear-gradient(92deg, #7df9ff 0%, #00c2ff 45%, #0066ff 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.btn-neon {
+  position: relative;
+  background: linear-gradient(92deg, #00c2ff, #0066ff);
+  box-shadow: 0 0 24px rgba(0, 194, 255, 0.55), 0 8px 32px rgba(0, 102, 255, 0.35);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.btn-neon:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 0 42px rgba(0, 194, 255, 0.8), 0 12px 44px rgba(0, 102, 255, 0.5);
+}
+
+.btn-ghost {
+  border: 1px solid rgba(125, 249, 255, 0.4);
+  background: rgba(0, 194, 255, 0.08);
+  transition: all 0.25s ease;
+}
+.btn-ghost:hover {
+  background: rgba(0, 194, 255, 0.18);
+  box-shadow: 0 0 24px rgba(0, 194, 255, 0.35);
+  transform: translateY(-2px);
+}
+
+.card-3d {
+  transform-style: preserve-3d;
+  transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.4s ease;
+}
+.card-3d:hover {
+  transform: translateY(-8px) rotateX(3deg) rotateY(-3deg);
+  box-shadow: 0 24px 70px rgba(0, 194, 255, 0.22);
+}
+
+.blob {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(90px);
+  opacity: 0.5;
+  pointer-events: none;
+  animation: drift 12s ease-in-out infinite alternate;
+}
+
+@keyframes drift {
+  from { transform: translate(0, 0) scale(1); }
+  to { transform: translate(40px, -30px) scale(1.15); }
+}
+
+@keyframes floaty {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+.animate-floaty { animation: floaty 5s ease-in-out infinite; }
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.animate-marquee { animation: marquee 28s linear infinite; }
+
+.grid-bg {
+  background-image:
+    linear-gradient(rgba(0, 194, 255, 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 194, 255, 0.07) 1px, transparent 1px);
+  background-size: 56px 56px;
+  mask-image: radial-gradient(ellipse 90% 70% at 50% 30%, black 40%, transparent 100%);
+}
+
+/* Real photos: never crop — contain + letterbox frame */
+.real-frame {
+  background: #02040f;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.real-frame img {
+  object-fit: contain !important;
+  width: 100%;
+  height: 100%;
+}
+
+::selection { background: rgba(0,194,255,0.4); }
+
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: #050816; }
+::-webkit-scrollbar-thumb { background: linear-gradient(#00c2ff, #0066ff); border-radius: 8px; }
+
+/* ---------- Mobile-friendly + smoothness ---------- */
+
+/* Touch devices: no sticky hover states, no 3D tilt on tap */
+@media (hover: none) {
+  .card-3d:hover { transform: none; box-shadow: none; }
+  .btn-neon:hover, .btn-ghost:hover { transform: none; }
+}
+
+/* Small phones: kill heavy GPU work (big blurs + loops) for 60fps scroll */
+@media (max-width: 640px) {
+  .blob { display: none; }
+  .animate-floaty { animation: none; }
+  .animate-marquee { animation-duration: 20s; }
+  .grid-bg { background-size: 40px 40px; }
+  .glass, .glass-strong {
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+  /* Stop iPhone Safari auto-zoom when tapping form fields */
+  input, select, textarea { font-size: 16px !important; }
+}
+
+/* Respect users who prefer less motion */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .blob, .animate-floaty, .animate-marquee { animation: none !important; }
+  *, *::before, *::after { transition-duration: 0.01ms !important; }
 }
