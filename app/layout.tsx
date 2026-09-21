@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     template: "%s | LED TV Sale and Service Ghaziabad",
   },
   description:
-    "25+ years trusted LED TV repair & sales in Indirapuram, Ghaziabad. All-brand Smart / OLED / QLED repair, Sony audio service, new & refurbished TVs, doorstep service. Call 7065674716.",
+    "25+ years trusted LED TV repair & sales in Indirapuram, Ghaziabad. All-brand Smart / OLED / QLED repair, Sony audio service, new & refurbished TVs, doorstep service. Call 9810555308.",
   keywords: [
     "LED TV repair Ghaziabad",
     "TV repair Indirapuram",
@@ -67,16 +67,22 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               "@context": "https://schema.org",
               "@type": "LocalBusiness",
               name: BUSINESS.name,
-              telephone: "+91-7065674716",
+              telephone: "+91-9810555308",
+              email: "shreesiddhielectronics@gmail.com",
               address: {
                 "@type": "PostalAddress",
                 streetAddress:
-                  "612 G, Agrasen Marg, Opp. Bharat Petrol Pump, Makanpur, Nyay Khand 2, Indirapuram",
+                  "613G, Nyay Khand 2, Kala Pathar Road, Opp. Bharat Petrol Pump, Indirapuram",
                 addressLocality: "Ghaziabad",
-                postalCode: "201014",
                 addressRegion: "Uttar Pradesh",
                 addressCountry: "IN",
               },
+              geo: {
+                "@type": "GeoCoordinates",
+                latitude: 28.636911,
+                longitude: 77.359772,
+              },
+              hasMap: "https://maps.google.com/?q=28.636911,77.359772",
               openingHours: "Mo-Su 09:00-21:00",
               aggregateRating: { "@type": "AggregateRating", ratingValue: "5.0", reviewCount: "9" },
             }),

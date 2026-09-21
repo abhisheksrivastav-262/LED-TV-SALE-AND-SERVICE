@@ -1,16 +1,18 @@
 export const BUSINESS = {
   name: "LED TV SALE AND SERVICE",
   tagline: "25+ Years of Trusted LED TV Repair & Sales Experts",
-  phone: "7065674716",
-  phoneDisplay: "+91 70656 74716",
-  phoneHref: "tel:+917065674716",
-  whatsapp: "https://wa.me/917065674716",
-  altPhones: ["9810555308", "8800345308"],
+  phone: "9810555308",
+  phoneDisplay: "+91 98105 55308",
+  phoneHref: "tel:+919810555308",
+  whatsapp: "https://wa.me/919810555308",
+  altPhones: ["8800345308"],
+  email: "shreesiddhielectronics@gmail.com",
+  emailHref: "mailto:shreesiddhielectronics@gmail.com",
   address:
-    "612 G, Agrasen Marg, Opp. Bharat Petrol Pump, Makanpur, Nyay Khand 2, Indirapuram, Ghaziabad, Uttar Pradesh – 201014",
-  mapQuery: encodeURIComponent(
-    "612 G Agrasen Marg Opp Bharat Petrol Pump Makanpur Nyay Khand 2 Indirapuram Ghaziabad 201014"
-  ),
+    "613G, Nyay Khand 2, Kala Pathar Road, Opp. Bharat Petrol Pump, Indirapuram, Ghaziabad",
+  mapLat: "28.636911",
+  mapLng: "77.359772",
+  mapUrl: "https://maps.google.com/?q=28.636911,77.359772",
   hours: "Monday – Sunday | 9:00 AM – 9:00 PM",
   rating: "5.0",
   reviews: "9 Reviews",
@@ -18,7 +20,7 @@ export const BUSINESS = {
 };
 
 export const waLink = (msg: string) =>
-  `https://wa.me/917065674716?text=${encodeURIComponent(msg)}`;
+  `https://wa.me/919810555308?text=${encodeURIComponent(msg)}`;
 
 export const NAV = [
   { label: "Home", href: "/" },
@@ -218,7 +220,7 @@ export const REVIEWS = [
 ];
 
 export const FAQS = [
-  { q: "Do you provide doorstep TV repair in Indirapuram / Ghaziabad?", a: "Yes. Same-day doorstep service across Indirapuram, Makanpur, Nyay Khand, Vasundhara & full Ghaziabad, 9 AM – 9 PM all 7 days. Call or WhatsApp 7065674716." },
+  { q: "Do you provide doorstep TV repair in Indirapuram / Ghaziabad?", a: "Yes. Same-day doorstep service across Indirapuram, Makanpur, Nyay Khand, Vasundhara & full Ghaziabad, 9 AM – 9 PM all 7 days. Call or WhatsApp 9810555308." },
   { q: "Which brands do you repair?", a: "All brands — Sony, Samsung, LG, Mi, OnePlus, TCL, Vu, Philips, Panasonic, Toshiba, Haier & more, including OLED / QLED / Smart TVs." },
   { q: "Do you use genuine spare parts?", a: "100% genuine / OEM-grade panels, boards & backlights with proper billing and warranty on replaced parts." },
   { q: "How much does LED TV repair cost?", a: "Minor service starts low; backlight, board & panel work is quoted transparently after free diagnosis. No work starts without your approval." },
@@ -227,5 +229,5 @@ export const FAQS = [
   { q: "Do you sell TV remotes?", a: "Yes — original & compatible remotes for every brand with doorstep delivery." },
   { q: "How long does repair take?", a: "Most repairs same-day. Panel orders / complex bonding take 24–48 hrs with standby guidance." },
   { q: "Is there warranty on repair?", a: "Yes — service warranty on workmanship plus manufacturer warranty on new parts / panels." },
-  { q: "How do I book a repair?", a: "Call 7065674716, WhatsApp, or fill the booking form — we confirm your slot instantly on WhatsApp." },
+  { q: "How do I book a repair?", a: "Call 9810555308, WhatsApp, or fill the booking form — we confirm your slot instantly on WhatsApp." },
 ];

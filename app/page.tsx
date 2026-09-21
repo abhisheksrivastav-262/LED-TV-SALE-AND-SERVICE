@@ -15,7 +15,7 @@ import { BUSINESS, FAQS } from "@/lib/constants";
 
 export const metadata: Metadata = {
   title: "Professional LED TV Repair & Sales in Ghaziabad — 25+ Years Experts",
-  description: "25+ years repairing all brands of LED TVs with genuine parts & doorstep service in Indirapuram, Ghaziabad. Sony audio repair, new & refurbished TV sales. Call 7065674716.",
+  description: "25+ years repairing all brands of LED TVs with genuine parts & doorstep service in Indirapuram, Ghaziabad. Sony audio repair, new & refurbished TV sales. Call 9810555308.",
 };
 
 const WHY = [

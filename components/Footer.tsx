@@ -44,7 +44,8 @@ export default function Footer() {
           <a href={BUSINESS.phoneHref} className="flex items-center gap-2 font-bold text-white hover:text-cyan-300">
             <Phone className="h-4 w-4" /> {BUSINESS.phoneDisplay}
           </a>
-          <p className="mt-2 text-slate-300/80">Alt: 9810555308 · 8800345308</p>
+          <p className="mt-2 text-slate-300/80">Also: 8800345308</p>
+          <a href={BUSINESS.emailHref} className="mt-1 block break-all text-slate-300/80 hover:text-cyan-300">{BUSINESS.email}</a>
           <p className="mt-3 flex gap-2 text-slate-300/80"><MapPin className="h-4 w-4 shrink-0 text-cyan-300" /> {BUSINESS.address}</p>
           <p className="mt-3 flex gap-2 text-slate-300/80"><Clock className="h-4 w-4 shrink-0 text-cyan-300" /> {BUSINESS.hours}</p>
         </div>

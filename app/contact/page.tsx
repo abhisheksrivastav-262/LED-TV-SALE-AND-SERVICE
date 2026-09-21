@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Phone, MessageCircle, MapPin, Clock } from "lucide-react";
+import { Phone, MessageCircle, MapPin, Clock, Mail } from "lucide-react";
 import SectionHeading, { Reveal } from "@/components/SectionHeading";
 import BookingForm from "@/components/BookingForm";
 import MapEmbed from "@/components/MapEmbed";
@@ -7,7 +7,7 @@ import { BUSINESS } from "@/lib/constants";
 
 export const metadata: Metadata = {
   title: "Contact & Book Repair — Call, WhatsApp, Visit Store",
-  description: "Book LED TV repair in Ghaziabad: call 7065674716, WhatsApp, or fill the form. Indirapuram store open Mon–Sun 9AM–9PM.",
+  description: "Book LED TV repair in Ghaziabad: call 9810555308, WhatsApp, or fill the form. Indirapuram store open Mon–Sun 9AM–9PM.",
 };
 
 export default function ContactPage() {
@@ -33,7 +33,8 @@ export default function ContactPage() {
               <div className="glass rounded-3xl p-6 text-sm">
                 <p className="flex gap-2"><MapPin className="h-5 w-5 shrink-0 text-cyan-300" /> {BUSINESS.address}</p>
                 <p className="mt-3 flex gap-2"><Clock className="h-5 w-5 shrink-0 text-cyan-300" /> {BUSINESS.hours}</p>
-                <p className="mt-3">Alt phones: 9810555308 · 8800345308</p>
+                <p className="mt-3">Second number: 8800345308</p>
+                <p className="mt-3 flex gap-2"><Mail className="h-5 w-5 shrink-0 text-cyan-300" /> <a href={BUSINESS.emailHref} className="break-all hover:text-cyan-300">{BUSINESS.email}</a></p>
                 <p className="mt-1 text-amber-300 font-bold">⭐ 5.0 Google Rating (9 Reviews)</p>
               </div>
             </div>

@@ -21,7 +21,7 @@ export default function BookingForm() {
       `*TV Size:* ${encodeURIComponent(f.size)}%0A` +
       `*Issue:* ${encodeURIComponent(f.issue)}%0A` +
       `*Address:* ${encodeURIComponent(f.address)}`;
-    window.open(`https://wa.me/917065674716?text=${msg}`, "_blank");
+    window.open(`https://wa.me/919810555308?text=${msg}`, "_blank");
   };
 
   const input =
